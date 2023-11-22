@@ -1,0 +1,9 @@
+<div id="list-range">
+{{ if eq .Section "people" }}
+         {{ partial "people-range" . }}
+  {{ else if eq .Section "proyects" }}
+         {{ partial "proyect-range" . }}
+  {{ else }}
+		 This is not defined.
+{{ end }}
+</div>

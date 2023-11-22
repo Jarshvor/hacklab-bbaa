@@ -1,0 +1,7 @@
+{{ $taxonomy := "tags" }}
+{{ $tagCount := len .Site.Taxonomies.tags }}
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+{{ range $index, $tag := .Site.Taxonomies.tags }}
+  <a href="/tags/{{ $tag | urlize }}">{{ $tag }} ({{ $tag.Count }})</a>
+  {{ if ne $index (sub $tagCount 1) }}, {{ end }}
+{{ end }}

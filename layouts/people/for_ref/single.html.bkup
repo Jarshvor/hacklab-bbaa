@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<div>
+
+  <main>
+    <article id="person">
+
+	  <div id="person-cover">
+		{{ $image := .Resources.GetMatch "images/nontile.png" }}
+		{{ with $image }}
+		  <img src="{{ .RelPermalink }}" width="250">
+		{{ end }}
+	  </div>
+
+      {{ partial "article-header" . }}
+
+      <div id="person-content">
+        {{ $content := .Content }}
+        {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+        {{ $content | safeHTML }}
+      </div>
+		Layout is: {{ with .Layout }} {{ . }} {{ else }} Not Set (at least directly). {{ end }}
+
+      {{ partial "article-footer" . }}
+    </article>
+
+    {{ partial "toc" . }}
+  </main>
+</div>
+
+
+
+
+
+{{ end }}

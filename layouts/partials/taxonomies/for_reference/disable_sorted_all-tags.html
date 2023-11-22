@@ -1,0 +1,21 @@
+{{/*
+
+
+{{ $taxonomy := "tags" }}
+{{ $tagLinks := slice }}
+{{ $sortedTags := slice }}
+
+{{ range $tag := $tags }}
+  {{ $link := printf "/%s/%s" $taxonomy ($tag.LinkTitle | urlize) }}
+  {{ $tagLinks = $tagLinks | append (printf "<a href='%s'>%s (%d)</a>" $link $tag.LinkTitle (len $tag.Pages)) }}
+  {{ $sortedTags = $sortedTags | append $tag }}
+{{ end }}
+
+{{ $sortedTags = $sortedTags | sort 0 "asc" "LinkTitle" }}
+
+{{ range $tag := $sortedTags }}
+  {{ index $tagLinks . }}
+{{ end }}
+
+
+*/}}

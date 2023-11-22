@@ -1,0 +1,17 @@
+<div class="people-wall">
+  {{ range .Pages }}
+    <div>
+      {{ $image := "" }}
+      {{ with .Page.Resources.GetMatch "bio-pic.jpg" }}
+        {{ $image = .Permalink }}
+      {{ else }}
+        {{ $image = (resources.Get "images/nontile_red.png").Permalink }}
+      {{ end }}
+      <a href="{{ .Permalink }}">
+        <img src="{{ $image }}" class="people-cover">
+      </a>
+      <br>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,38 @@
+{{ $taxonomy := "tags" }}
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+{{ range $name, $t := .Site.Taxonomies.tags }}
+  {{ if $name }}, {{ end }}
+  <a href="/tags/{{ $name | urlize }}">{{ $name }} ({{ .Count }})</a>
+{{ end }}
+
+<br>
+<br>
+
+{{ $taxonomy := "tags" }}
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+{{ $terms := .Site.Taxonomies.tags }}
+{{ range $index, $tag := $terms.PageTerms }}
+  {{ if ne $index 0 }}, {{ end }}
+  <a href="/tags/{{ $tag.Name | urlize }}">{{ $tag.Name }} ({{ len $tag.Pages }})</a>
+{{ end }}
+
+
+<br>
+
+{{ $taxonomy := "tags" }}
+{{ with site.Taxonomies }}
+  <p>
+    {{ (site.GetPage $taxonomy).LinkTitle }}:
+    {{ range $k, $_ := . -}}
+      {{ if $k }}, {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+  </p>
+{{ end }}
+
+<br>
+<br> Op1 <br>
+{{ .GetTerms $taxonomy }}
+<br> Op2 <br>
+{{ site.Taxonomies }}
+

@@ -1,0 +1,9 @@
+{{ if eq .Type "tags" }}
+  {{ partial "taxonomies/all-tags" . }}
+{{ else if eq .Type "authors" }}
+  {{ partial "taxonomies/all-authors" . }}
+{{ else if eq .Type "materials" }}
+  {{ partial "taxonomies/all-materials" . }}
+{{ end }}
+
+{{ partial "proyect-range" . }}

@@ -1,0 +1,14 @@
+{{ $taxonomy := "tags" }}
+{{ with site.GetPage $taxonomy }}
+  {{ .LinkTitle }}:
+  {{ $tags := .Pages }}
+  {{ $tagNames := slice }}
+  {{ range $index, $tag := $tags }}
+    {{ $tagNames = $tagNames | append .LinkTitle }}
+  {{ end }}
+  {{ with delimit $tagNames ", " }}
+    {{ . }}
+  {{ end }}
+{{ else }}
+  <p>No terms found in the taxonomy.</p>
+{{ end }}

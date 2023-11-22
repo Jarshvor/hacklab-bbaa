@@ -1,0 +1,7 @@
+# top-most EditorConfig file
+root = true
+
+# 2 Space indentation for HTML files in this proyect.
+[*.html]
+indent_style = space
+indent_size = 2

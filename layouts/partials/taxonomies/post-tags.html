@@ -1,0 +1,24 @@
+{{/*
+This is the partial layouts file for the tags in the header of individual posts.
+
+*/}}
+
+
+{{ $taxonomy := "tags" }}
+{{ with .GetTerms $taxonomy }}
+    {{ (site.GetPage $taxonomy).LinkTitle }}:
+    {{ range $k, $_ := . -}}
+      {{ if $k }}, {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+{{ end }}
+
+<br>
+
+{{ with .Param "tags" }}
+  {{ range $index, $tag := (. | sort) }} 
+  {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+    <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,50 @@
+{{ $taxonomy := "tags" }}
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+  {{ range $name, $t := .Site.Taxonomies.tags }}
+	{{ if $name }}, {{ end }}
+    <a href="/tags/{{ $name | urlize }}">{{ $name }} ({{ .Count }})</a>
+  {{ end }}
+
+<br>
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+  {{ range $name, $t := .Site.Taxonomies.tags -}}
+	{{ if $name }}, {{ end }}
+    <a href="/tags/{{ $name | urlize }}">{{ $name }} ({{ .Count }})</a>
+	<br>
+	{{ $name }}
+	<br>
+	{{ $t }}
+  {{- end }}
+
+<br>
+{{ (site.GetPage $taxonomy).LinkTitle }}:
+  {{ range $name, $t := .Site.Taxonomies.tags -}}
+    {{ range $k, $_ := . -}}
+      {{ if $k }}, {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+  {{- end }}
+
+<br>
+{{ (.Site.Taxonomies.tags) }}
+
+
+
+{{ with .GetPage $taxonomy }}
+  <p>
+    {{ range $k, $_ := . -}}
+      {{ if $k }}, {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+  </p>
+{{ end }}
+
+<br>
+
+{{ with (.GetPage "tags") }}
+<p>
+  {{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}
+  <a href="{{ $t.Permalink }}">{{ $t.LinkTitle }}</a>
+  {{ end }}.
+</p>
+{{ end }}

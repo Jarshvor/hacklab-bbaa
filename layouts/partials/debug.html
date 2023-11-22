@@ -1,0 +1,33 @@
+<div id="debug-div">
+  <br>
+    Is this page Section? {{ .IsSection }}
+  <br>
+    Section is: {{ .Section }}
+  <br>
+    Kind is: {{ .Kind }}
+  <br>
+    Type is: {{ .Type }}
+  <br>
+    Layout is: {{ with .Layout }} {{ . }} {{ else }} Not Set. {{ end }}
+  <br>
+    {{ .NextInSection }} is next in section.
+  <br>
+    Current Section is: {{ .CurrentSection }}
+  <br>
+    {{ with .File }}
+      File in use is {{ .Filename }}
+    {{ else }}
+      Page has no backup file.
+    {{ end }}
+  <br>
+  <br>
+    Section is {{ .Section }}.
+  <br>
+    Wordcount is {{ .WordCount }}.
+  <br>
+    Page Params are: {{ .Params }}
+  <br>
+    This is testing.
+  <br>
+    This is testing.
+</div>

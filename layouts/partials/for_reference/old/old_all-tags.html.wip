@@ -1,0 +1,43 @@
+<ul>
+  {{ range .Site.Taxonomies.tags }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
+</ul>
+
+Hieeeloo---
+<br>
+{{ $taxonomy := "tags" }}
+{{ with .GetTerms $taxonomy }}
+  <p>
+	{{ (site.GetPage $taxonomy).LinkTitle }}:
+		hello
+  </p>
+
+{{ range .Site.Taxonomies.tags }}
+  <p>
+	{{ .Page.Title }} {{ .Count }} {{ end }}
+  </p>
+{{ end }}
+
+
+
+From hugo forums:
+<br>
+{{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+  {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+         <div class="tagbutton">
+	<a href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+	<sup>{{$cnt}}</sup>
+         </div>
+  {{end}}
+{{end}}
+
+----
+<br>
+
+<ul>
+  {{ (site.GetPage $taxonomy).LinkTitle }}:
+  {{ range $name, $t := .Site.Taxonomies.tags  }}
+    <a href="/tags/{{ $name | urlize }}">{{ $name }},</a>
+  {{ end }}
+</ul>

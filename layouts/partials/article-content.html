@@ -1,0 +1,6 @@
+<div id="article-content">
+  {{ $content := .Content }}
+  <!-- ### Regex to add target="_blank" attribute to http and https hrefs so they are opened in new tab-->
+  {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content }}
+  {{ $content | safeHTML }}
+</div>

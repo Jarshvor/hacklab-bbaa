@@ -1,0 +1,28 @@
+<header id="article-header">
+  <h1>{{ .Title | markdownify }}</h1>
+</header>
+
+{{ if .IsSection }}
+	{{ if eq .Section "proyects" }}
+		<h5>{{ partial "taxonomies/all-tags" . }}<h5>
+		<h5>{{ partial "taxonomies/all-authors" . }}</h5>
+		<h5>{{ partial "taxonomies/all-materials" . }}</h5>
+		<h5>Date/Year: 2023, 2022 </h5>
+	{{ end }}
+
+	{{ if eq .Section "events" }}
+		{{ partial "years" . }}
+	{{ end }}
+{{ end }}
+
+{{ if .IsPage }}
+    {{ if or (eq .Type "events") (eq .Type "proyects") (eq .Type "research") }}
+		<h2>{{ .Date.Format "2 January 2006" }}</h2>
+
+		{{ if or (eq .Type "proyects") (eq .Type "research") }}
+			<h5>{{ partial "taxonomies/authors" . }}</h5>
+			<h5>{{ partial "taxonomies/post-tags" . }}</h5>
+			<h5>{{ partial "taxonomies/materials" . }}</h5>
+		{{ end }}
+	{{ end }}
+{{ end }}

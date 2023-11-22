@@ -1,0 +1,18 @@
+<header id="article-header">
+  <h1>{{ .Title | markdownify }}</h1>
+</header>
+
+{{ if .IsPage }}
+	<br> This is a page
+    {{ if or (eq .Type "events") (eq .Type "proyects") }}
+		<br> This page is of Type: "{{ .Type }}"
+		<h2>{{ .Date.Format "2 January 2006" }}</h2>
+	{{ else }}
+		<br> This page is not a post. Type is: "{{ .Type }}"
+	{{ end }}
+
+	{{ if or (eq .Type "proyects") (eq .Type "research") }}
+		<h5>{{ partial "post-tags" . }}</h5>
+	{{ end }}
+
+{{ end }}

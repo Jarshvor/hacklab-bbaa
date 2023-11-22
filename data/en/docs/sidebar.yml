@@ -1,0 +1,46 @@
+- title: Documentation
+  pages:
+    - title: Overview
+
+- title: 3D-Printing
+  pages:
+    - title: Page 01
+    - title: Slicers
+    - title: Cura
+    - title: Machines
+    - title: COLIDO
+    - title: Ender-3
+
+
+- title: Laser-Cutting
+  pages:
+    - title: Page 02
+    - title: Material Catalogue
+
+- title: Digitizing
+  pages:
+    - title: Photogrammetry
+    - title: Reality Capture
+    - title: Laser-Scanning
+    - title: Structured-Light
+
+- title: CNC-milling
+  pages:
+    - title: Page 01
+    - title: Roland MDX-650 Pro
+    - title: Roland MDX-15
+    - title: Bits
+    - title: Feeds/Speeds
+    - title: CAM software (path-generation)
+
+- title: Instalaciones
+  pages:
+    - title: 3D-Lab
+    - title: Taller de diseño
+
+- title: Section 06
+  pages:
+    - title: Page 01
+
+
+

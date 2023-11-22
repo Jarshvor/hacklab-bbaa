@@ -1,0 +1,19 @@
+{{/*
+Everything 'single' page has a TOC unless explicitely disabled via (toc: false) in the frontmatter.
+(considering there are headers in the content file to populate it, ofcourse).
+Actually, no. It can still be empty.
+
+We definetly dont want tocs on the people individuals pages for instance.
+Maybe we want tocs on lists aswell, and should explicitely set it in frontmatter for posts and some other stuff.
+*/}}
+
+{{ if ne .Params.toc false }}
+<aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+	{{ .TableOfContents }}
+    <a href="">-- ↑ -- </a>
+  </div>
+</aside>
+{{ end }}

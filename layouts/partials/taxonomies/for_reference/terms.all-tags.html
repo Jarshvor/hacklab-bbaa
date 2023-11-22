@@ -1,0 +1,13 @@
+{{ $taxonomy := "tags" }}
+{{ $terms := index $.Site.Taxonomies $taxonomy }}
+{{ with $terms }}
+  {{ $termList := slice }}
+  {{ range $term, $pages := . }}
+    {{ $termList = $termList | append $term }}
+  {{ end }}
+  {{ with delimit $termList ", " }}
+    {{ . }}
+  {{ end }}
+{{ else }}
+  <p>No terms found in the taxonomy.</p>
+{{ end }}

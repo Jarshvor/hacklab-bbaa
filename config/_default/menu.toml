@@ -1,0 +1,49 @@
+#[[main]]
+#identifier = 'home'
+#name = 'Home'
+#pre = "<i class='icon icon-home'></i>"
+#url = '/'
+#weight = -1
+
+[[main]]
+identifier = 'about'
+name = 'About'
+pre = "<i class='icon icon-home'></i>"
+url = '/About/'
+weight = 1
+
+[[main]]
+identifier = 'proyects'
+name = 'Proyects'
+pre = "<i class='icon icon-toc'></i>"
+url = '/proyects/'
+weight = 2
+
+[[main]]
+identifier = 'docs'
+name = 'Documentation'
+pre = "<i class='icon icon-book'></i>"
+url = '/docs/'
+weight = 3
+
+[[main]]
+identifier = 'research'
+name = 'Research'
+pre = "<i class='icon icon-calendar'></i>"
+url = '/research/'
+weight = 4
+
+
+[[main]]
+identifier = 'events'
+name = 'Events'
+pre = "<i class='icon icon-calendar'></i>"
+url = '/events/'
+weight = 5
+
+# [[main]]
+# identifier = 'posts'
+# name = 'posts'
+# pre = "<i class='icon icon-calendar'></i>"
+# url = '/posts/'
+# weight = 6

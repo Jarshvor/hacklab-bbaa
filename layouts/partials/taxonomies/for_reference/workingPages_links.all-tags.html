@@ -1,0 +1,15 @@
+{{ $taxonomy := "tags" }}
+{{ with site.GetPage $taxonomy }}
+  {{ .LinkTitle }}:
+  {{ $tags := .Pages }}
+  {{ $tagLinks := slice }}
+  {{ range $tag := $tags }}
+    {{ $link := printf "/tags/%s" $tag.LinkTitle | urlize }}
+    {{ $tagLinks = $tagLinks | append (printf "<a href='%s'>%s</a>" $link $tag.LinkTitle) }}
+  {{ end }}
+  {{ with delimit $tagLinks ", " }}
+    {{ . | safeHTML }}
+  {{ end }}
+{{ else }}
+  <p>No terms found in the taxonomy.</p>
+{{ end }}

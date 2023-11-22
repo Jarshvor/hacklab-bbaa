@@ -1,0 +1,10 @@
+<div class="people-wall">
+{{ range .Pages }}
+    <ul>
+	{{ $image := resources.Get "/images/nontile_red.png" }}
+	<a href="{{ .Permalink }}"> <img src="{{ $image.RelPermalink }}" class="people-cover"> </a>
+	<br>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </ul>
+{{ end }}
+</div>

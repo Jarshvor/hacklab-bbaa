@@ -1,0 +1,41 @@
+#description = 'A modular Hugo theme to build your next documentation site'
+description = 'Un espacio para la cultura digital colaborativa en el corazón de la Complutense.'
+
+author = 'hacklab-bbaa'
+authorURL = 'https://hacklab-bbaa.com/'
+
+currentYear = 2023
+# projectStartYear = 2020
+
+facebookURL = 'https://facebook.com/'
+twitterURL = 'https://www.twitter.com/'
+githubURL = 'https://github.com/'
+youtubeURL = 'https://www.youtube.com/'
+
+githubRepo = 'your/repo'
+githubSponsorURL = 'https://github.com/sponsors/'
+buyMeACoffeeURL = 'https://www.buymeacoffee.com/'
+
+[algolia]
+[algolia.en]
+container = '#site-header-search'
+appId = ''
+indexName = ''
+apiKey = ''
+[algolia.es]
+container = '#site-header-search'
+appId = ''
+indexName = ''
+apiKey = ''
+
+#[[githubRepos]]
+#name = 'Website'
+#repo = 'docura/site'
+#icon = "<i class='icon icon-book'></i>"
+#description = 'The repository of the website.'
+#
+#[[githubRepos]]
+#name = 'Code'
+#repo = 'docura/docura'
+#icon = "<i class='icon icon-theme'></i>"
+#description = 'The repository of the theme.'

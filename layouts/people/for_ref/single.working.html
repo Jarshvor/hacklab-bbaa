@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ $image := .Resources.GetMatch "images/nontile.png" }}
+{{ with $image }}
+	<img src="{{ .RelPermalink }}" width="200">
+{{ end }}
+
+<div id="site-main-content-wrapper">
+  {{ $dataLocale := index .Site.Data .Site.Language.Lang }}
+  {{ if isset $dataLocale .Section }}
+    {{ partial "sidebar" . }}
+  {{ end }}
+  <main>
+    <article id="article">
+    {{ if isset $dataLocale .Section }}     {{/* ### Conditional  to remove 'On this section' button if it is empty */}}
+      {{ partial "article-nav" . }}
+    {{ end }}
+      {{ partial "article-header" . }}
+      {{- range $key, $value:= .Data.Terms -}}
+    <a class="tag-cloud" href="{{ "" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">{{ $key }}&nbsp;({{ $value.Count }})</a>
+      {{- end -}}
+
+
+{{ end }}

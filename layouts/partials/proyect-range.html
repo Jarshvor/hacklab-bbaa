@@ -1,0 +1,15 @@
+<ul>
+{{ range .Pages }}
+    <li>
+    <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
+	<br>
+{{/*
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+	<br>
+	<img src="{{ .Permalink }}{{ .Params.cover }}" class="proyect-banner">
+*/}}
+	{{ $image := resources.Get "/images/tile_banner.jpg" }}
+	<a href="{{ .Permalink }}"> <img src="{{ $image.RelPermalink }}" class="proyect-banner"> </a>
+    </li>
+{{ end }}
+</ul>

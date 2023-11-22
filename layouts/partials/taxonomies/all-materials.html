@@ -1,0 +1,32 @@
+<!--
+
+The following code:
+- Sets a manually configured variable as the $taxonomy.
+- Prints the name of the taxonomy (Tags:)
+- Gets the .Page objects into the $tags variable.
+- Creates an empty slice.
+- ranges over the .Page objects ($tags) using the $tag variable
+- and for each iteration sets the $link as the /$taxonomy/ and the /$tag Title. Then urlizes it.
+- also for each iteration it appends to the $tagLinks "array?" the href anchor with the $link and the $tag Title.
+- It also counts the pages for each $tag.
+- We now have to consider sorting of the terms in the taxonomy: alphabetically, by count, by custom relationship (materials).
+
+-->
+
+
+{{ $taxonomy := "materials" }}
+{{ with site.GetPage $taxonomy }}
+  {{ .LinkTitle }}:
+  {{ $tags := .Pages }}
+  {{ $tagLinks := slice }}
+  {{ range $tag := $tags }}
+	{{ $link := printf "/%s/%s" $taxonomy ($tag.LinkTitle | urlize) }}
+    {{ $tagLinks = $tagLinks | append (printf "<a href='%s'>%s (%d)</a>" $link $tag.LinkTitle (len $tag.Pages)) }}
+
+  {{ end }}
+  {{ with delimit $tagLinks ", " }}
+    {{ . | safeHTML }}
+  {{ end }}
+{{ else }}
+  <p>No terms found in the taxonomy.</p>
+{{ end }}

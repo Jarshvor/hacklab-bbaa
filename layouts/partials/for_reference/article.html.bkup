@@ -1,0 +1,21 @@
+<article id="article">
+<!-- ### Conditional to remove the 'On this section' button if it is empty -->
+{{/*
+{{ if isset $dataLocale .Section }}
+  {{ partial "article-nav" . }}
+{ end }}
+*/}}
+
+  {{ partial "article-header" . }}
+ {{- range $key, $value:= .Data.Terms -}}
+<a class="tag-cloud" href="{{ "" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">{{ $key }}&nbsp;({{ $value.Count }})</a>
+ {{- end -}}
+
+  <div id="article-content">
+    {{ $content := .Content }}
+    <!-- ### Regex to add target="_blank" attribute to http and https hrefs so they are opened in new tab-->
+    {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content }}
+    {{ $content | safeHTML }}
+  </div>
+  {{ partial "article-footer" . }}
+</article>

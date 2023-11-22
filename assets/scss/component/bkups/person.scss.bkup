@@ -1,0 +1,335 @@
+#person {
+  padding: 8px 16px;
+}
+
+#person-header {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  color: var(--color2)
+}
+
+#person-content h1,
+#person-content h2,
+#person-content h3,
+#person-content h4,
+#person-content h5,
+#person-content h6 {
+  line-height: 1em;
+  font-weight: 400;
+  margin: 2.6em 0 .1em;
+  color: var(--color2)
+}
+
+#person-content h1 {
+  font-size: 1.8em
+}
+
+#person-content h2 {
+  font-size: 1.5em
+}
+
+#person-content h3 {
+  font-size: 1.3em
+}
+
+#person-content h4 {
+  font-size: 1.1em
+}
+
+#person-content .highlight,
+#person-content blockquote,
+#person-content dl,
+#person-content iframe,
+#person-content ol,
+#person-content p,
+#person-content table,
+#person-content ul {
+  margin-top: 1em;
+  line-height: 1.8;
+  letter-spacing: -.1px;
+}
+
+#person-content blockquote p {
+  margin: 1em 0
+}
+
+#person-content blockquote dl,
+#person-content blockquote ol,
+#person-content blockquote ul {
+  margin: 0 1em 1em 1em
+}
+
+#person-content a {
+  color: var(--color-anchor);
+  text-decoration: none
+}
+
+#person-content a:hover {
+  color: var(--color-hover);
+  text-decoration: underline
+}
+
+@media print {
+  #person-content a {
+    color: #355265;
+    text-decoration: underline
+  }
+
+  #person-content a:after {
+    content: " (" attr(href) ")";
+    font-size: 80%
+  }
+}
+
+#person-content strong, #person-content b, #person-content table th {
+  font-weight: 600
+}
+
+#person-content em {
+  font-style: italic
+}
+
+#person-content dl,
+#person-content ol,
+#person-content ul {
+  margin-left: 20px
+}
+
+#person-content dl dl,
+#person-content dl ol,
+#person-content dl ul,
+#person-content ol dl,
+#person-content ol ol,
+#person-content ol ul,
+#person-content ul dl,
+#person-content ul ol,
+#person-content ul ul {
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+#person-content ul {
+  list-style: disc
+}
+
+#person-content ol {
+  list-style: decimal
+}
+
+#person-content dl {
+  list-style: square
+}
+
+#person-content li > ul {
+  list-style: circle
+}
+
+#person-content li > ol {
+  list-style: lower-alpha
+}
+
+#person-content li p {
+  margin: 0
+}
+
+#person-content li .highlight,
+#person-content li blockquote,
+#person-content li iframe,
+#person-content li table {
+  margin: 1em 0
+}
+
+#person-content img,
+#person-content video {
+  max-width: 100%;
+  border-radius: 4px
+}
+
+#person-content blockquote {
+  padding: 8px 12px;
+  position: relative;
+  background: var(--background-fg);
+  border-left: 4px solid var(--border-color);
+  border-radius: 6px;
+}
+
+#person-content blockquote footer {
+  margin: 1em 0;
+  font-style: italic
+}
+
+#person-content blockquote footer cite:before {
+  content: "—";
+  padding: 0 .3em
+}
+
+#person-content blockquote footer cite a {
+  color: var(--border-color);
+}
+
+#person-content code, #person-content pre {
+  font-family: var(--font-family-code);
+}
+
+#person-content h1 code,
+#person-content h2 code,
+#person-content h3 code,
+#person-content h4 code,
+#person-content h5 code,
+#person-content h6 code,
+#person-content p code,
+#person-content blockquote code,
+#person-content ul code,
+#person-content ol code,
+#person-content dl code,
+#person-content table code {
+  background: var(--chroma-base00);
+  padding: 4px;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+#person-content pre:not(.chroma) {
+  color: var(--chroma-base05);
+  font-size: .9em;
+  line-height: 1.8;
+  letter-spacing: -.1px;
+  background-color: var(--chroma-base00);
+  border-radius: 6px;
+  padding: 16px 24px;
+  overflow-x: auto;
+  margin-top: 1em;
+}
+
+#person-content blockquote code {
+  background: var(--background-fg2);
+  opacity: .8;
+}
+
+#person-content blockquote .chroma, #person-content blockquote pre:not(.chroma) {
+  background: var(--background-fg2);
+  margin-bottom: 1em;
+}
+
+#person-content blockquote .chroma code, #person-content blockquote pre:not(.chroma) code {
+  padding: 0;
+}
+
+#person-content table {
+  max-width: 100%;
+  border: 1px solid var(--border-color)
+}
+
+#person-content table td,
+#person-content table th {
+  padding: 5px 15px
+}
+
+#person-content table tr:nth-child(2n) {
+  background: var(--background-fg)
+}
+
+#person-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+}
+
+#person-last-updated, #person-prev-link, #person-next-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+#person-last-updated {
+  grid-column: 1 / 3;
+  justify-content: center;
+  color: var(--color3);
+}
+
+#person-prev-link, #person-next-link {
+  color: var(--color-anchor);
+}
+
+#person-prev-link:hover, #person-next-link:hover {
+  color: var(--color-hover);
+  font-weight: 600;
+  font-size: 98%;
+}
+
+#person-next-link {
+  justify-content: flex-end;
+}
+
+#person-prev-link .icon {
+  padding-right: 6px;
+}
+
+#person-next-link .icon {
+  padding-left: 6px;
+}
+
+@media (max-width: 767px) {
+  #person-next-link[data-first-page="true"] {
+    grid-column: 2/ 3;
+  }
+}
+
+@media (min-width: 768px) {
+  #person {
+    padding: 16px 24px;
+  }
+
+  #person-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #person-prev-link {
+    grid-column: 1/ 2;
+    grid-row: 1;
+  }
+
+  #person-last-updated {
+    grid-column: 2 / 3;
+  }
+
+  #person-next-link {
+    grid-column: 3 / 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  #person {
+    padding: 24px 32px;
+  }
+}
+
+@media (min-width: 1281px) {
+  #person {
+    padding: 32px 40px;
+  }
+}
+
+@media (min-width: 1920px) {
+  #person {
+    padding: 40px 48px;
+  }
+
+  #person-content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 2560px) {
+  #person-content {
+    width: 85%;
+  }
+}
+
+@media (min-width: 3840px) {
+  #person-content {
+    width: 80%;
+  }
+}

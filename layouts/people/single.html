@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<div>
+
+  <main>
+    <article id="person">
+
+	  <div id="person-cover">
+        {{ with .Resources.GetMatch "images/nontile.png" }}
+            {{ $image := .Permalink }}
+			        <img src="{{ $image }}" >
+        {{ else }}
+    		{{ $image := resources.Get "/images/nontile_bw.png" }}
+				    <img src="{{ $image.RelPermalink }}" alt="" class="w-96">
+        {{ end }}
+      </div>
+
+	  <div id="person-bio">
+      	  {{ partial "article-header" . }}
+
+	      <div id="person-content">
+	        {{ $content := .Content }}
+    	    {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+	        {{ $content | safeHTML }}
+	      </div>
+	  </div>
+
+	  <div id="person-tags">
+		Tag-cloud here.
+	  </div>
+
+    </article>
+
+    {{ partial "toc" . }}
+  </main>
+</div>
+
+
+
+
+
+{{ end }}

@@ -1,0 +1,47 @@
+.people-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.people-cover:hover {
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 450px) {
+  .people-wall {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .people-wall {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+#person {
+  padding: 8px 16px;
+  display: flex;
+}
+
+#person-cover {
+  max-width: 40%;
+}
+
+#person-bio {
+  padding: 0px 16px;
+}
+
+#person-tags {
+  
+}
+
+#article-header {
+}
+
+#person-content {
+  fex: 1;
+  display: flex;
+  flex-direction: column;
+}
