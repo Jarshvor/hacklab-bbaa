@@ -1,8 +1,9 @@
 #description = 'A modular Hugo theme to build your next documentation site'
 description = 'Un espacio para la cultura digital colaborativa en el corazón de la Complutense.'
 
-author = 'hacklab-bbaa'
-authorURL = 'https://hacklab-bbaa.com/'
+[author]
+name = 'hacklab-bbaa'
+URL = 'https://hacklab-bbaa.com/'
 
 currentYear = 2023
 # projectStartYear = 2020
