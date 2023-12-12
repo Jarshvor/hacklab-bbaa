@@ -24,6 +24,10 @@
     - title: Laser-Scanning
     - title: Structured-Light
 
+- title: 3D modelling/creation
+  pages:
+    - title: Blender
+
 - title: CNC-milling
   pages:
     - title: Page 01
@@ -41,6 +45,3 @@
 - title: Section 06
   pages:
     - title: Page 01
-
-
-
