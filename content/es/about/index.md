@@ -8,7 +8,7 @@ draft: false
 
 ## History
 
-HACKLAB Bellas Artes started its journey as a space for inter-faculty/student collaboration, research, and proyect management in the realm of technology and digital fabrication.
+HACKLAB UCM started its journey as a space for inter-faculty/student collaboration, research, and proyect management in the realm of technology and digital fabrication.
 
 Today we formalize this activity in the form of a PIMCD, Proyecto de Innovación.
 
