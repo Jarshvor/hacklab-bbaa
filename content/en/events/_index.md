@@ -13,3 +13,4 @@ Esto es una prueba de contenido en la página events:
 	- Prueba 2
 
 Past events.
+List of events:
