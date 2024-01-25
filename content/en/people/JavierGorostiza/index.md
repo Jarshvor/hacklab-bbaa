@@ -7,11 +7,7 @@ draft: false
 
 # Hello world.
 
-<img class="special-img-class" src="images/nontile.png" />
-
-<p> thit ss a nthtml paragrah </p>
-
 bio:
 
-Research Lineas:
-
+Interests: FLOSS, mechanical engineering, electronics,  
+Research Topics: CAD, 
